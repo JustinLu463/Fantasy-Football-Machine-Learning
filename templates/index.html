@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Player Projections</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Player</h1>
+        <form action="/projection" method="POST">
+            <select name="player">
+                {% for player in players %}
+                    <option value="{{ player }}">{{ player }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <button type="submit">Get Projection</button>
+        </form>
+    </div>
+</body>
+</html>
